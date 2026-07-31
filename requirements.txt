@@ -12,3 +12,6 @@ albumentations
 PyYAML
 tqdm
 seaborn
+timm
+einops
+open_clip_torch
