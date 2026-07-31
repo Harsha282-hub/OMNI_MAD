@@ -27,7 +27,11 @@ class OMNIMADPredictor:
     def _load_weights(self, path):
         if not os.path.exists(path):
             raise FileNotFoundError(f"Weights not found at {path}")
-        checkpoint = torch.load(path, map_location=self.device)
+        checkpoint = torch.load(
+            path,
+            map_location=self.device,
+            weights_only=False
+        )
         state_dict = checkpoint.get('ema_state_dict', checkpoint.get('state_dict'))
         
         # Strip DDP 'module.' prefix if it exists
