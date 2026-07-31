@@ -30,6 +30,10 @@ import urllib.request
 
 MODEL_URL = "https://huggingface.co/Harshavardhan1222/omni-mad-model/resolve/main/best_model.pth"
 
+import urllib.request
+
+MODEL_URL = "https://huggingface.co/Harshavardhan1222/omni-mad-model/resolve/main/best_model.pth"
+
 @st.cache_resource
 def load_predictor():
     checkpoint_dir = os.path.join(cfg.SAVE_DIR, cfg.RUN_NAME)
@@ -38,7 +42,7 @@ def load_predictor():
     checkpoint_path = os.path.join(checkpoint_dir, "best_model.pth")
 
     if not os.path.exists(checkpoint_path):
-        with st.spinner("Downloading model... This happens only the first time."):
+        with st.spinner("Downloading model..."):
             urllib.request.urlretrieve(MODEL_URL, checkpoint_path)
 
     return OMNIMADPredictor(checkpoint_path=checkpoint_path)
