@@ -12,6 +12,6 @@ albumentations
 PyYAML
 tqdm
 seaborn
-timm
-einops
-open_clip_torch
+albucore
+imageio
+scikit-image
