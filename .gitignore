@@ -1,0 +1,12 @@
+venv/
+wandb/
+logs/
+__pycache__/
+*.pyc
+
+data/
+checkpoints/
+
+*.pth
+*.pt
+*.ckpt
